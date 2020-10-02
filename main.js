@@ -1,6 +1,8 @@
 // Importing Components
 const { List, Avatar, Empty, Input, Form, Button, TimePicker, Result } = antd;
 
+const { TextArea } = Input;
+
 // Installing Service Worker
 if ('serviceWorker' in navigator) {
   navigator.serviceWorker.register('/service-worker.js');
@@ -105,7 +107,7 @@ function MyTask() {
     return(
       <div className="col-2-1">
         <div>{description}</div>
-        <div>{(new Date(schedule).getDay()-new Date().getDay())==0?'Today':(new Date(schedule).getDay()-new Date().getDay()==1?'Tomorrow':(new Date(schedule).getDate()+"/"+(new Date(schedule).getMonth()+1)+"\n\b\n\b"+new Date(schedule).getHours()+"."+new Date(schedule).getMinutes(schedule)
+        <div>{(new Date(schedule).getDay()-new Date().getDay())==0?('Today'+'\n\b'+new Date(schedule).getHours()+'.'+new Date(schedule).getMinutes()):(new Date(schedule).getDay()-new Date().getDay()==1?('Tomorrow'+'\n\b'+new Date(schedule).getHours()+'.'+new Date(schedule).getMinutes()):(new Date(schedule).getDate()+"/"+(new Date(schedule).getMonth()+1)+"\n\b\n\b"+new Date(schedule).getHours()+"."+new Date(schedule).getMinutes(schedule)
         ) )}</div>
       </div>
     )
@@ -172,7 +174,7 @@ function AddTask() {
           message: 'Enter Task Description'
         },
         ]}>
-          <Input placeholder="Your Task Description" />
+          <TextArea rows={4} placeholder="Your Task Description" />
         </Form.Item>
         
         <Form.Item label="When" name="schedule" rules={[
@@ -199,12 +201,10 @@ function ExpiredTask() {
   store.subscribe(() => {
     var ActiveTask = []
     store.getState().Tasks.forEach((item) => {
-      console.log(item)
       if (item.schedule > new Date().getTime()) {
         ActiveTask.push(item)
       }
     })
-    console.log(ActiveTask)
     if (ActiveTask.length > 0) {
       setMytask(ActiveTask)
       setLoad(false)
@@ -226,12 +226,13 @@ function ExpiredTask() {
     }
   }, [])
   
-  const ListDescription = ({ description, schedule }) => {
-    return (
+  const ListDescription = ({ description, schedule })=>{
+    return(
       <div className="col-2-1">
-          <div>{description}</div>
-          <div>{(new Date(schedule).getDay()-new Date().getDay())==0?'Today':(new Date(schedule).getDay()-new Date().getDay()==1?'Tomorrow':new Date(schedule).getDate())}</div>
-        </div>
+        <div>{description}</div>
+        <div>{(new Date(schedule).getDay()-new Date().getDay())==0?('Today'+'\n\b'+new Date(schedule).getHours()+'.'+new Date(schedule).getMinutes()):(new Date(schedule).getDay()-new Date().getDay()==1?('Tomorrow'+'\n\b'+new Date(schedule).getHours()+'.'+new Date(schedule).getMinutes()):(new Date(schedule).getDate()+"/"+(new Date(schedule).getMonth()+1)+"\n\b\n\b"+new Date(schedule).getHours()+"."+new Date(schedule).getMinutes(schedule)
+        ) )}</div>
+      </div>
     )
   }
   
