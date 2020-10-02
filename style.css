@@ -1,0 +1,88 @@
+body {
+  padding: 0;
+  margin: 0;
+}
+
+.body {
+  display: grid;
+  grid-template-columns: 1fr 3fr;
+}
+
+p {
+  margin: 0;
+}
+
+.container {
+  padding: 1em;
+  height: 100vh;
+  overflow: scroll;
+  padding-bottom: 5em;
+}
+
+.bottom-bar div:hover {
+  background: #fff;
+}
+
+label {
+  padding: 1em 0;
+}
+
+button {
+  width: 50%;
+  margin: 0 25%;
+}
+
+.no-margin {
+  margin: 0;
+}
+
+.col-2-1 {
+  display: grid;
+  grid-template-columns: 2fr 1fr;
+}
+
+@media only screen and (min-width: 600px) {
+  .bottom-bar {
+    border-right: 1px solid #E5E5E5;
+    height: 100vh;
+  }
+  .bottom-bar div {
+    padding: 1em 0.5em;
+    display: grid;
+    grid-template-columns: 1fr 3fr;
+    justify-items: center;
+   }
+  .bottom-bar p {
+    justify-self: start;
+  }
+  .bottom-bar ion-icon {
+    padding: 2.5px 0;
+  }
+}
+
+@media only screen and (max-width: 600px) {
+  .body {
+    display: block;
+  }
+  .bottom-bar {
+    position: fixed;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    font-size: 1.5em;
+    border-top: 1px solid #E5E5E5;
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr;
+    text-align: center;
+    z-index: 5;
+    background: #FFFFFF;
+  }
+  .bottom-bar div {
+    display: block;
+    padding: 0.5em;
+  }
+  .bottom-bar p {
+    font-size: 0.5em;
+    color: grey;
+  }
+}
