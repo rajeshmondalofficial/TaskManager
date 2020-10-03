@@ -1,29 +1,10 @@
-# Foobar
+## Task Manager - Simply Create, Manage Taks & Get Notify
 
-Foobar is a Python library for dealing with word pluralization.
+A Simple Task Manager to Create, Manage & Notify Of Tasks. Its Not Connected To Any Kind Of Database instead using Browser LocalStorage To Store/Retrieve Task Data.
 
-## Installation
+It's Build with [React.js](https://reactjs.org), [Redux](https://redux.js.org) on Single Page Application(SPA) Architecture. UI Designed By [Ant Design](https://ant.design) Library
 
-Use the package manager [pip](https://pip.pypa.io/en/stable/) to install foobar.
+# Preview
 
-```bash
-pip install foobar
-```
+See Live Preview [http://task-manager-delta.vercel.app](https://task-manager-delta.vercel.app)
 
-## Usage
-
-```python
-import foobar
-
-foobar.pluralize('word') # returns 'words'
-foobar.pluralize('goose') # returns 'geese'
-foobar.singularize('phenomena') # returns 'phenomenon'
-```
-
-## Contributing
-Pull requests are welcome. For major changes, please open an issue first to discuss what you would like to change.
-
-Please make sure to update tests as appropriate.
-
-## License
-[MIT](https://choosealicense.com/licenses/mit/)
