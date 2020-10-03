@@ -4,10 +4,6 @@ A Simple Task Manager to Create, Manage & Notify Of Tasks. Its Not Connected To 
 
 It's Build with [React.js](https://reactjs.org), [Redux](https://redux.js.org) on Single Page Application(SPA) Architecture. UI Designed By [Ant Design](https://ant.design) Library
 
-## Notification
-
-You may not get the Notification unless you enable the #enable-experimental-web-platform-features in chrome flags. Navigate to chrome://flags to enable it. [Learn more about it](https://web.dev/notification-triggers/)
-
 ## Preview
 
 See Live Preview [http://task-manager-delta.vercel.app](https://task-manager-delta.vercel.app)
